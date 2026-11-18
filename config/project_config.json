@@ -1,0 +1,83 @@
+{
+  "project": "Robustness of DL IDS against LLM-generated polymorphic attack traffic",
+  "created": "2026-11-18T15:05:17",
+  "dirs": {
+    "base": "/content/drive/MyDrive/IDS_Polymorphic_Project",
+    "raw": "/content/drive/MyDrive/IDS_Polymorphic_Project/data/raw",
+    "processed": "/content/drive/MyDrive/IDS_Polymorphic_Project/data/processed",
+    "variants": "/content/drive/MyDrive/IDS_Polymorphic_Project/data/variants",
+    "models": "/content/drive/MyDrive/IDS_Polymorphic_Project/models",
+    "results": "/content/drive/MyDrive/IDS_Polymorphic_Project/results",
+    "prompts": "/content/drive/MyDrive/IDS_Polymorphic_Project/prompts",
+    "config": "/content/drive/MyDrive/IDS_Polymorphic_Project/config",
+    "logs": "/content/drive/MyDrive/IDS_Polymorphic_Project/logs"
+  },
+  "dataset": "CIC-IDS2017 MachineLearningCSV",
+  "raw_files": [
+    "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "Wednesday-workingHours.pcap_ISCX.csv",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv"
+  ],
+  "label_map": {
+    "BENIGN": "Benign",
+    "DoS Hulk": "DoS_Hulk",
+    "PortScan": "PortScan",
+    "FTP-Patator": "BruteForce",
+    "SSH-Patator": "BruteForce"
+  },
+  "class_names": [
+    "Benign",
+    "DoS_Hulk",
+    "PortScan",
+    "BruteForce"
+  ],
+  "benign_class": "Benign",
+  "benign_id": 0,
+  "attack_classes": [
+    "DoS_Hulk",
+    "PortScan",
+    "BruteForce"
+  ],
+  "label_to_id": {
+    "Benign": 0,
+    "DoS_Hulk": 1,
+    "PortScan": 2,
+    "BruteForce": 3
+  },
+  "data_seed": 42,
+  "model_seeds": [
+    42,
+    102,
+    2025
+  ],
+  "split": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "balancing": {
+    "attack_cap_train": 40000,
+    "attack_cap_val": 8571,
+    "benign_to_attack_ratio": 1.0,
+    "test_max_rows": 200000
+  },
+  "class_weights_balanced": {
+    "0": 0.5,
+    "1": 1.08,
+    "2": 1.08,
+    "3": 6.75
+  },
+  "n_features": 59,
+  "processed_files": {
+    "train_raw": "train_raw.parquet",
+    "val_raw": "val_raw.parquet",
+    "test_raw": "test_raw.parquet",
+    "X_train": "X_train.npy",
+    "X_val": "X_val.npy",
+    "X_test": "X_test.npy",
+    "y_train": "y_train.npy",
+    "y_val": "y_val.npy",
+    "y_test": "y_test.npy",
+    "scaler": "scaler.joblib"
+  }
+}

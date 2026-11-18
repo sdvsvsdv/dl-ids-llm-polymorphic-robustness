@@ -1,0 +1,140 @@
+{
+  "load": {
+    "Tuesday-WorkingHours.pcap_ISCX.csv": {
+      "rows_read": 445909,
+      "rows_kept": 445909,
+      "raw_label_counts": {
+        "BENIGN": 432074,
+        "FTP-Patator": 7938,
+        "SSH-Patator": 5897
+      }
+    },
+    "Wednesday-workingHours.pcap_ISCX.csv": {
+      "rows_read": 692703,
+      "rows_kept": 671104,
+      "raw_label_counts": {
+        "DoS Hulk": 231073,
+        "BENIGN": 440031,
+        "DoS slowloris": 5796,
+        "DoS Slowhttptest": 5499,
+        "DoS GoldenEye": 10293,
+        "Heartbleed": 11
+      }
+    },
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": {
+      "rows_read": 286467,
+      "rows_kept": 286467,
+      "raw_label_counts": {
+        "PortScan": 158930,
+        "BENIGN": 127537
+      }
+    }
+  },
+  "cleaning": {
+    "initial_rows": 1403480,
+    "initial_counts": {
+      "Benign": 999642,
+      "DoS_Hulk": 231073,
+      "PortScan": 158930,
+      "BruteForce": 13835
+    },
+    "rows_with_inf": 1932,
+    "rows_with_nan": 1224,
+    "removed_nonfinite": 1932,
+    "removed_negative": 1432,
+    "negative_by_column": {
+      "Flow IAT Min": 1420,
+      "Flow Duration": 74,
+      "Flow Packets/s": 74,
+      "Flow IAT Max": 74,
+      "Flow IAT Mean": 74,
+      "Flow Bytes/s": 52,
+      "Fwd Header Length": 12,
+      "Fwd IAT Min": 8,
+      "Bwd Header Length": 5
+    },
+    "removed_exact_duplicates": 191172,
+    "exact_duplicates_by_class": {
+      "Benign": 61103,
+      "DoS_Hulk": 57277,
+      "PortScan": 68110,
+      "BruteForce": 4682
+    },
+    "removed_label_conflicts": 150,
+    "final_rows": 1208794,
+    "final_counts": {
+      "Benign": 936343,
+      "DoS_Hulk": 172613,
+      "PortScan": 90694,
+      "BruteForce": 9144
+    }
+  },
+  "splits": {
+    "before_balancing": {
+      "train": {
+        "Benign": 655440,
+        "DoS_Hulk": 120829,
+        "PortScan": 63486,
+        "BruteForce": 6400
+      },
+      "val": {
+        "Benign": 140451,
+        "DoS_Hulk": 25892,
+        "PortScan": 13604,
+        "BruteForce": 1372
+      },
+      "test": {
+        "Benign": 140452,
+        "DoS_Hulk": 25892,
+        "PortScan": 13604,
+        "BruteForce": 1372
+      }
+    },
+    "after_balancing": {
+      "train": {
+        "Benign": 86400,
+        "DoS_Hulk": 40000,
+        "PortScan": 40000,
+        "BruteForce": 6400
+      },
+      "val": {
+        "Benign": 18514,
+        "DoS_Hulk": 8571,
+        "PortScan": 8571,
+        "BruteForce": 1372
+      },
+      "test": {
+        "Benign": 140452,
+        "DoS_Hulk": 25892,
+        "PortScan": 13604,
+        "BruteForce": 1372
+      }
+    },
+    "realistic_mix_percent_full_clean_data": {
+      "Benign": 77.461,
+      "DoS_Hulk": 14.28,
+      "PortScan": 7.503,
+      "BruteForce": 0.756
+    }
+  },
+  "final_shapes": {
+    "X_train": [
+      172800,
+      59
+    ],
+    "X_val": [
+      37028,
+      59
+    ],
+    "X_test": [
+      181320,
+      59
+    ]
+  },
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "sklearn": "1.6.1"
+  }
+}

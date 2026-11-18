@@ -1,0 +1,8 @@
+RQ1 (recall drop on LLM variants, class-balanced): RandomForest +0.207, MLP +0.025, CNN1D +0.035, LSTM +0.164
+RQ2 (mean evasion rate over models, per attack type): DoS_Hulk 0.090, PortScan 0.183, BruteForce 0.064
+RQ3 (robustness ranking by smallest drop): most robust = MLP, least robust = RandomForest
+E3 control (drop on scripted noise): RandomForest +0.129, MLP +0.017, CNN1D +0.030, LSTM +0.115 | LLM drop minus noise drop (mean over models): +0.035
+RQ4 @ 20 %: recovery RandomForest +0.190, MLP +0.004, CNN1D +0.016, LSTM -0.013 | ΔF1(orig) RandomForest -0.0001, MLP +0.0014, CNN1D -0.0001, LSTM +0.0148 | ΔFPR(orig) RandomForest +0.0000, MLP -0.0003, CNN1D -0.0002, LSTM -0.0053
+RQ4 @ 50 %: recovery RandomForest +0.188, MLP +0.015, CNN1D +0.016, LSTM +0.063 | ΔF1(orig) RandomForest -0.0001, MLP +0.0032, CNN1D -0.0003, LSTM +0.0216 | ΔFPR(orig) RandomForest -0.0000, MLP +0.0000, CNN1D -0.0007, LSTM -0.0059
+
+Note: values are means over seeds 42, 102, 2025; see FINAL_summary_table.csv for standard deviations.
